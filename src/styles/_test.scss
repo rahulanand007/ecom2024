@@ -1,0 +1,80 @@
+.test{
+    margin: 0.2rem;
+    padding: 0.2rem;
+    
+    
+    // overflow-y: auto;
+}
+
+.main{
+    @include flex(row, flex-start, center, 3rem);
+    border: solid black 1px;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin:0.3rem 1rem;
+    padding: 0.3rem;
+    width: 80rem;
+
+    .patient{
+        @include flex;
+        border-right: solid black 1px;
+        padding-right: 0.5rem;
+        width: 300px;
+        margin:0 0.5rem ;
+        padding:0 2rem;
+
+        >article{
+            font-size: smaller;
+
+            >button{
+                background-color: $color3;
+                font-size: x-small;
+                color: white;
+                padding:0.2rem;
+                border-radius: 5px;
+                margin:0.2rem 0;
+            }
+        }
+
+        
+    }
+
+    .logisticUser{
+        @include flex;
+        margin: 0 -1.2rem;
+        border:solid rgb(225, 214, 214) 1px;
+        border-radius: 5px;
+        padding: 0.5rem ;
+        box-shadow: rgb(242, 227, 227) 1px 1px;
+        width: 20%;
+        height: 9rem;
+        text-align: left;
+
+        >span>article{
+            font-size: smaller;
+        }
+        .left{
+            
+            @include flex(column)
+        }
+        
+    }
+
+    .icon{
+        font-size:5rem;
+        border:solid rgb(225, 214, 214) 1px;
+        border-radius: 5px;
+        @include square(6rem);
+        text-align:center;
+        // max-width: fit-content;
+        text-overflow: clip;
+    }
+
+    .logistic-icon{
+        @include square(4rem);
+        border-radius: 50%;
+        font-size: 3rem;
+    }
+    
+}
+

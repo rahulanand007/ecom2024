@@ -3,8 +3,10 @@ import { lazy, Suspense } from "react";
 import Loader from "./components/Loader";
 import Header from "./components/header";
 
+
 const Home = lazy(() => import("./pages/Home"));
 const Cart = lazy(() => import("./pages/Cart"));
+const Shipping = lazy(()=> import("./pages/shipping")) ;
 
 const Dashboard = lazy(() => import("./pages/admin/dashboard"));
 const Products = lazy(() => import("./pages/admin/products"));
@@ -17,6 +19,7 @@ const Coupon = lazy(() => import("./pages/admin/apps/coupon"));
 const Stopwatch = lazy(() => import("./pages/admin/apps/stopwatch"));
 const Toss = lazy(() => import("./pages/admin/apps/toss"));
 const NewProduct = lazy(() => import("./pages/admin/management/newproduct"));
+import Test from "./pages/test"
 const ProductManagement = lazy(
   () => import("./pages/admin/management/productmanagement")
 );
@@ -33,6 +36,13 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
+
+          <Route path="/test" element={<Test/>}/>
+
+          {/* Logged In User Routes */}
+          <Route path="/shipping" element = {<Shipping/>}/>
+
+
           {/*ADMIN ROUTES*/}
           <Route
           // element={
