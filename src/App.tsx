@@ -8,6 +8,9 @@ const Home = lazy(() => import("./pages/Home"));
 const Cart = lazy(() => import("./pages/Cart"));
 const Shipping = lazy(()=> import("./pages/shipping")) ;
 
+const Login = lazy(()=>import("./pages/login"))
+const Search = lazy(()=>import("./pages/search"))
+
 const Dashboard = lazy(() => import("./pages/admin/dashboard"));
 const Products = lazy(() => import("./pages/admin/products"));
 const Customers = lazy(() => import("./pages/admin/customers"));
@@ -20,6 +23,8 @@ const Stopwatch = lazy(() => import("./pages/admin/apps/stopwatch"));
 const Toss = lazy(() => import("./pages/admin/apps/toss"));
 const NewProduct = lazy(() => import("./pages/admin/management/newproduct"));
 import Test from "./pages/test"
+const OrderDetails = lazy(()=>import("./pages/order-details")) ;
+const Orders = lazy(()=>import("./pages/orders")) ;
 const ProductManagement = lazy(
   () => import("./pages/admin/management/productmanagement")
 );
@@ -36,12 +41,17 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/search" element={<Search/>}/>
 
           <Route path="/test" element={<Test/>}/>
 
+          {/* Not Logged in Route*/ }
+          <Route path="/login" element={<Login/>}></Route>
+
           {/* Logged In User Routes */}
           <Route path="/shipping" element = {<Shipping/>}/>
-
+          <Route path="/orders" element = {<Orders/>}/>
+          <Route path="/order/:id" element={<OrderDetails/>}/>
 
           {/*ADMIN ROUTES*/}
           <Route
