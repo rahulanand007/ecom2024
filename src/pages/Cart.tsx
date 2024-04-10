@@ -56,7 +56,7 @@ const Cart = () => {
           <em> - ₹{discount}</em>
         </p>
         <p>
-          <b>Total : ₹{total} </b>
+          <b> Total: ₹{total} </b>
         </p>
 
         <input
